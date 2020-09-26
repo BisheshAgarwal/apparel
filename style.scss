@@ -1,0 +1,267 @@
+$color-neutral: hsl(0, 6%, 24%);
+$color-primary-light: hsl(0, 36%, 70%);
+$color-primary-dark: hsl(0, 93%, 68%);
+
+*,
+*::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: $color-neutral;
+}
+
+.container {
+    width: 100%;
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    display: flex;
+    min-height: 100vh;
+}
+
+.content-container {
+    padding: 4rem 14rem 0 14rem;
+    flex-basis: 60%;
+}
+
+.logo {
+    position: absolute;
+    left: 14rem;
+    top: 5rem;
+}
+
+.content {
+
+    margin-top: 15rem;
+
+    h1 {
+        font-size: 5rem;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 15px;
+        margin-bottom: 2rem;
+
+        span {
+            display: block;
+        }
+
+        span:nth-child(1) {
+            color: $color-primary-light;
+            font-weight: 300;
+        }
+    }
+
+    p {
+        text-align: left;
+        color: $color-primary-light;
+        font-weight: 400;
+        margin-bottom: 4rem;
+        width: 80%;
+
+        span {
+            display: block;
+        }
+    }
+
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .input {
+        padding: 2rem 3rem;
+        width: 70%;
+        border-radius: 30px;
+        border: 1px solid $color-primary-light;
+        font-family: inherit;
+        font-size: 1.6rem;
+
+        &::placeholder {
+            font-weight: lighter;
+            color: $color-neutral;
+            opacity: .7;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .btn {
+        display: inline-block;
+        background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        padding: 2rem 4rem;
+        border-radius: 40px;
+        transform: translateX(-50%);
+        cursor: pointer;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            background-image: linear-gradient(135deg, hsl(0, 36%, 70%), hsl(0, 36%, 70%));
+        }
+
+        svg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.image-container {
+    text-align: center;
+    flex: 1;
+    background-image: url(../images/hero-desktop.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.error {
+    margin-left: 5%;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    display: none;
+
+    p {
+        color: $color-primary-dark;
+    }
+}
+
+.error-icon {
+    display: none;
+    position: absolute;
+    right: 40%;
+    bottom: 15%;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 1000px) {
+
+    html {
+        font-size: 56.25%;
+    }
+
+    .logo {
+        left: 10rem;
+    }
+
+    .content-container {
+        padding: 10rem 10rem 0 10rem;
+    }
+
+    .email {
+        .input {
+            width: 100%;
+            padding: 2rem 3rem;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .logo {
+        left: 10%;
+    }
+
+    .image-container {
+        margin-top: 15rem;
+        background-image: url(../images/hero-mobile.jpg);
+        min-height: 250px;
+        background-position: top;
+    }
+
+    .content-container {
+        padding: 4rem 5rem 5rem 5rem;
+    }
+
+    .content {
+        margin-top: 0;
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            width: 90%;
+            margin: 0 auto 4rem auto;
+
+            span {
+                display: inline-block;
+            }
+        }
+    }
+
+    .email {
+        text-align: center;
+        justify-content: center;
+
+        .input {
+            width: 90%;
+            margin-left: 5%;
+        }
+    }
+
+    .error-icon {
+        right: 15rem;
+        bottom: 15%;
+    }
+    
+    .error {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .email {
+
+        .input {
+            margin-left: 5%;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 43.75%;
+    }
+
+    .content-container {
+        padding: 4rem 2rem 4rem 2rem;
+    }
+
+    .email {
+
+        .input {
+            width: 100%;
+            margin-left: 5%;
+        }
+    }
+}
